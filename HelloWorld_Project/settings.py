@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "pages.apps.PagesConfig", #New App
+    "pages", #New App
     
 ]
 
@@ -53,10 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'HelloWorld_Project.urls'
 
+# filepath: c:\Users\Masters pC\OneDrive\OneDrive - Universidad EAFIT\Escritorio\EAFIT\SEMESTRE 6\Arquitectura De Software\HelloWorld_Project\Tutorial1ArquitecturaSoftware\HelloWorld_Project\settings.py
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Asegúrate de que este directorio esté configurado
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
