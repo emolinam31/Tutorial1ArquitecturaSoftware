@@ -7,28 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <link href="{% static 'pages/app.css' %}" rel="stylesheet" />
-    <title>{% block title %}Online Store{% endblock %}</title>
+    <title>{% block title %}Tienda en Línea{% endblock %}</title> <!-- Traducción de "Online Store" -->
 </head>
 <body>
     <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
         <div class="container">
-            <a class="navbar-brand" href="#">Online Store</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Tienda en Línea</a> <!-- Traducción de "Online Store" -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link active" href="#">About</a>
+                    <a class="nav-link active" href="{% url 'home' %}">Inicio</a> <!-- Traducción de "Home" -->
+                    <a class="nav-link active" href="{% url 'about' %}">Acerca de</a> <!-- Traducción de "About" -->
                 </div>
             </div>
         </div>
     </nav>
     <header class="masthead bg-primary text-white text-center py-4">
         <div class="container d-flex align-items-center flex-column">
-            <h2>{% block header_title %}A Django EAFIT App{% endblock %}</h2>
+            <h2>{% block header_title %}Una aplicación Django de EAFIT{% endblock %}</h2> <!-- Traducción de "A Django EAFIT App" -->
         </div>
     </header>
     <!-- header -->
