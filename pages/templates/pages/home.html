@@ -1,7 +1,50 @@
-{% extends 'pages/base.html' %}  <!-- Cambiar esta línea -->
-{% block title %}Home Page - Online Store{% endblock %}
+{% extends 'pages/base.html' %}
+
+{% block title %}Inicio - Tienda en Línea{% endblock %}
+
+{% block header_title %}Bienvenido a Nuestra Tienda en Línea{% endblock %}
+
 {% block content %}
-<div class="text-center">
-    Welcome to the application
-</div>
+<div class="container">
+    <!-- Sección de bienvenida -->
+    <div class="row text-center mb-5">
+        <div class="col-12">
+            <h3 class="mb-3">¡Bienvenido a nuestra tienda!</h3>
+            <p class="lead text-muted">
+                Descubre nuestros productos increíbles y crea los tuyos propios. 
+                Una experiencia de compra única te espera.
+            </p>
+        </div>
+    </div>
+
+    <!-- Acciones principales -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Crear Producto</h5>
+                    <p class="card-text">
+                        Agrega un nuevo producto a nuestra tienda con información detallada.
+                    </p>
+                    <a href="{% url 'form' %}" class="btn btn-primary">
+                        <i class="bi bi-plus-lg"></i> Crear Nuevo Producto
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ver Productos</h5>
+                    <p class="card-text">
+                        Explora todos los productos disponibles en nuestra tienda.
+                    </p>
+                    <a href="{% url 'products' %}" class="btn btn-success">
+                        <i class="bi bi-eye"></i> Ver Catálogo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Producto Creado - Tienda en Línea{% endblock %}
+
+{% block header_title %}¡Producto Creado Exitosamente!{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-success">
+                <div class="card-header bg-success text-white text-center">
+                    <h4 class="mb-0">
+                        <i class="bi bi-check-circle-fill me-2"></i>
+                        Product created
+                    </h4>
+                </div>
+                <div class="card-body text-center">
+                    <div class="alert alert-success" role="alert">
+                        <h5 class="alert-heading">¡Éxito!</h5>
+                        <p class="mb-0">Tu producto ha sido creado correctamente y agregado al catálogo.</p>
+                    </div>
+                    
+                    {% if product %}
+                    <div class="card bg-light mt-4">
+                        <div class="card-body">
+                            <h6 class="card-title">Detalles del Producto Creado:</h6>
+                            <div class="row">
+                                <div class="col-sm-4"><strong>ID:</strong></div>
+                                <div class="col-sm-8">{{ product.id }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4"><strong>Nombre:</strong></div>
+                                <div class="col-sm-8">{{ product.name }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4"><strong>Precio:</strong></div>
+                                <div class="col-sm-8">${{ product.price }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4"><strong>Descripción:</strong></div>
+                                <div class="col-sm-8">{{ product.description }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="mt-4">
+                        <a href="{% url 'products' %}" class="btn btn-primary me-2">
+                            <i class="bi bi-eye"></i> Ver Todos los Productos
+                        </a>
+                        <a href="{% url 'form' %}" class="btn btn-success me-2">
+                            <i class="bi bi-plus-lg"></i> Crear Otro Producto
+                        </a>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">
+                            <i class="bi bi-house"></i> Ir al Inicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
