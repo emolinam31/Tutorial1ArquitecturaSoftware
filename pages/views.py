@@ -43,9 +43,7 @@ class ProductIndexView(View):
 class ProductShowView(View):
     template_name = 'products/show.html'
 
-
     def get(self, request, id):
-
         # Check if product id is valid
         try:
             product_id = int(id)
@@ -57,36 +55,24 @@ class ProductShowView(View):
             return HttpResponseRedirect(reverse('home'))
         
         viewData = {}
-        product = get_object_or_404(Product, pk=product_id)
         viewData["title"] = product.name + " - Online Store"
-        viewData["subtitle"] =  product.name + " - Product information"
+        viewData["subtitle"] = product.name + " - Product information"
         viewData["product"] = product
 
         return render(request, self.template_name, viewData)
 
-    template_name = 'products/show.html'
-    def get(self, request, id):
-        try:
-            product = Product.products[int(id)-1]
-        except(IndexError, ValueError):
-            return HttpResponseRedirect('')
-          
-        viewData = {}
-        viewData["title"] = product["name"] + " - Online Store"
-        viewData["subtitle"] = product["name"] + " - Product information"
-        viewData["product"] = product
-        return render(request, self.template_name, viewData)
-    
+
 class ProductListView(ListView):
     model = Product
     template_name = 'product_list.html'
-    context_object_name = 'products'  # This will allow you to loop through 'products' in your template
+    context_object_name = 'products'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Products - Online Store'
         context['subtitle'] = 'List of products'
         return context   
+
 
 class ProductForm(forms.ModelForm):
     class Meta:
